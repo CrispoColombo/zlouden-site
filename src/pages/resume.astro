@@ -6,15 +6,33 @@ type Role = {
   title: string;
   dates: string;
   description?: string;
+  clients?: string[];
+  bullets?: string[];
 };
 
 const experience: Role[] = [
   {
-    company: "Independent",
+    company: "Independent · Self-employed",
     title: "Product Designer & Consultant",
-    dates: "2023 — Present",
-    description:
-      "Designing complex SaaS UX and shipping the software myself. Currently building LintKit, a Figma design linter. Recent work spans design tooling, developer experience, and data‑heavy admin interfaces.",
+    dates: "Jan 2008 — Present",
+    clients: [
+      "Google",
+      "Apple",
+      "Nutanix",
+      "Marketo",
+      "FedEx",
+      "Sysdig",
+      "Cascade",
+      "TerraTrue",
+    ],
+    bullets: [
+      "Designed complex data‑driven SaaS, developer tools, and interaction patterns for technical users",
+      "Built dashboards, data viz, rule engines, and workflows for power users",
+      "Created scalable design systems — icons, components, visual language",
+      "Partnered with engineering and PM to ship clear, feasible, high‑quality implementations",
+      "Built Figma + Sketch plugins with Claude Code to automate design‑system QA and remediation at scale",
+      "Delivered component replacement + variable/token workflows; improved performance and accessibility (state, virtualization, edge cases)",
+    ],
   },
   {
     company: "Postman",
@@ -57,13 +75,6 @@ const experience: Role[] = [
     dates: "2014 — 2015",
     description:
       "Designed a complex logistics application for FedEx Express — a modern replacement for the 30‑year‑old TRAC and Route planning systems.",
-  },
-  {
-    company: "Independent",
-    title: "Product Designer",
-    dates: "2008 — 2014",
-    description:
-      "Big data, SaaS, CRMs, logistics applications, and complex user interactions for a wide range of clients.",
   },
   {
     company: "X2Engine CRM",
@@ -147,7 +158,7 @@ const languages = [
 ---
 
 <Layout title="Resume — Zach Louden">
-  <section class="mx-auto max-w-4xl px-6 pt-20 md:pt-32 pb-24">
+  <section class="mx-auto max-w-4xl px-6 pt-8 md:pt-12 pb-24">
     <div class="text-xs uppercase tracking-[0.2em] text-[var(--color-muted)] mb-6">
       Resume
     </div>
@@ -171,6 +182,19 @@ const languages = [
               </div>
               {role.description && (
                 <p class="text-[var(--color-ink)]/80 leading-relaxed max-w-prose">{role.description}</p>
+              )}
+              {role.clients && role.clients.length > 0 && (
+                <div class="mt-2 text-[var(--color-ink)]/80 max-w-prose leading-relaxed">
+                  <span class="text-[var(--color-muted)]">Clients: </span>
+                  {role.clients.join(", ")}
+                </div>
+              )}
+              {role.bullets && role.bullets.length > 0 && (
+                <ul class="mt-3 space-y-1.5 list-disc pl-5 text-[var(--color-ink)]/80 leading-relaxed max-w-prose">
+                  {role.bullets.map((b) => (
+                    <li>{b}</li>
+                  ))}
+                </ul>
               )}
             </div>
           ))
