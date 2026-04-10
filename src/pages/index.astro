@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+---
+
+<Layout>
+  <section class="mx-auto max-w-6xl px-6 pt-20 md:pt-32 pb-16">
+    <div class="max-w-3xl">
+      <div class="text-xs uppercase tracking-[0.2em] text-[var(--color-muted)] mb-6">
+        Product Designer · San Francisco
+      </div>
+      <h1 class="text-5xl md:text-7xl leading-[1.05] mb-8">
+        Hi, I'm Zach. I design complex SaaS tools — and I also build them.
+      </h1>
+      <p class="text-lg md:text-xl text-[var(--color-muted)] leading-relaxed max-w-2xl">
+        I work on complex systems modeling and data‑heavy applications.
+        Selected work below — some pieces link out to full case studies.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6">
+    <div class="border-t border-[var(--color-line)]">
+      {projects.map((project, i) => <ProjectCard project={project} index={i} />)}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 mt-24">
+    <div class="border-t border-[var(--color-line)] pt-10 pb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+      <h2 class="text-3xl md:text-4xl max-w-lg leading-tight">
+        Want to talk about a project?
+      </h2>
+      <a
+        href="mailto:zlouden@gmail.com"
+        class="text-lg underline decoration-[var(--color-line)] underline-offset-8 hover:text-[var(--color-accent)] hover:decoration-[var(--color-accent)]"
+      >
+        zlouden@gmail.com →
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,107 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+---
+
+<CaseStudyLayout
+  title="Richmond"
+  tagline="A design system built for complex, information-dense applications."
+  role="Design Lead"
+  year="2018–2019"
+  slug="richmond"
+>
+  <figure>
+    <img src="/images/richmond/macbook.png" alt="Richmond design system overview" />
+  </figure>
+
+  <h2>Overview</h2>
+  <p>
+    Richmond is a fork of the Ant component library built for Angular, reskinned and
+    extended to serve the specific needs of StreamSets. When I joined StreamSets there
+    were no established branding guidelines — a logo existed, but the website and
+    existing products were built with a patchwork of Bootstrap and Materialize
+    components. That fragmentation was an opportunity: rather than patch, we built
+    something unified and customizable.
+  </p>
+
+  <figure>
+    <img src="/images/richmond/title.png" alt="Richmond title slide" />
+  </figure>
+
+  <h2>Strategic Decision</h2>
+  <p>
+    We chose to reskin Ant instead of building from scratch. Ant gave us a robust,
+    well-tested component foundation, which freed the team to focus on the
+    custom components the product actually needed — pipeline canvases,
+    dense data tables, complex filter bars, and specialized visualizations.
+  </p>
+
+  <figure>
+    <img src="/images/richmond/slide1.png" alt="Richmond component overview" />
+  </figure>
+  <figure>
+    <img src="/images/richmond/slide2.png" alt="Richmond component overview" />
+  </figure>
+
+  <h2>Icons</h2>
+  <p>
+    The product needed a comprehensive icon set — general UI icons plus specialized
+    pipeline stage icons for dozens of data sources and destinations. I assembled
+    the library from a mix of custom work, contracted illustration, and reconstructions
+    of legacy PDF assets. Every icon was drawn as a scalable vector and aligned to the
+    core color palette.
+  </p>
+
+  <figure>
+    <img src="/images/richmond/group14.png" alt="Richmond icon set" />
+  </figure>
+  <figure>
+    <img src="/images/richmond/group2.png" alt="Icon grid" />
+  </figure>
+  <figure>
+    <img src="/images/richmond/group12.png" alt="Pipeline stage icons" />
+  </figure>
+
+  <h2>Tables &amp; Filtering</h2>
+  <p>
+    User research surfaced a specific pain point: experienced users wanted rich,
+    bookmarkable filters and the ability to slice tables in complex ways, while
+    newer users got overwhelmed by the same interfaces. The table system balances
+    both by exposing simple filter chips by default while tucking advanced query
+    building behind a progressive disclosure.
+  </p>
+
+  <figure>
+    <img src="/images/richmond/kapture.gif" alt="Table filtering interaction" />
+  </figure>
+  <figure>
+    <img src="/images/richmond/group18.png" alt="Advanced filter UI" />
+  </figure>
+  <figure>
+    <img src="/images/richmond/group19.png" alt="Table states" />
+  </figure>
+  <figure>
+    <img src="/images/richmond/table.png" alt="Table with confirmations" />
+  </figure>
+
+  <h2>Pipeline Designer</h2>
+  <p>
+    The canvas-based pipeline designer is the heart of StreamSets. The hardest
+    design problem was maximizing usable screen space while still surfacing the
+    contextual information users needed — error states, runtime metrics, and
+    configuration — without overwhelming them.
+  </p>
+
+  <figure>
+    <img src="/images/richmond/group32.png" alt="Pipeline designer canvas" />
+  </figure>
+  <figure>
+    <img src="/images/richmond/canvas.gif" alt="Pipeline canvas interaction" />
+  </figure>
+
+  <h2>Challenges</h2>
+  <ul>
+    <li>A hard timeline while keeping the design and engineering teams aligned</li>
+    <li>Earning buy-in from engineers already deep in the existing codebase</li>
+    <li>Keeping pace with a rapidly expanding engineering team</li>
+  </ul>
+</CaseStudyLayout>

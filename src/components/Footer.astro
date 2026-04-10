@@ -1,0 +1,31 @@
+---
+const year = new Date().getFullYear();
+const socials = [
+  { href: "mailto:zlouden@gmail.com", label: "Email" },
+  { href: "https://www.linkedin.com/in/zacharylouden/", label: "LinkedIn" },
+  { href: "https://dribbble.com/zlouden", label: "Dribbble" },
+  { href: "https://www.behance.net/zlouden", label: "Behance" },
+];
+---
+
+<footer class="border-t border-[var(--color-line)] mt-24">
+  <div class="mx-auto max-w-6xl px-6 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div class="text-sm text-[var(--color-muted)]">
+      © {year} Zach Louden · Product Designer · San Francisco
+    </div>
+    <nav class="flex gap-6 text-sm">
+      {
+        socials.map((s) => (
+          <a
+            href={s.href}
+            target={s.href.startsWith("http") ? "_blank" : undefined}
+            rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            class="text-[var(--color-muted)] hover:text-[var(--color-accent)]"
+          >
+            {s.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</footer>

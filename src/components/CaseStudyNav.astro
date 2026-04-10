@@ -1,0 +1,27 @@
+---
+import { projects } from "../data/projects";
+
+type Props = { currentSlug: string };
+const { currentSlug } = Astro.props;
+
+const caseStudies = projects.filter((p) => p.status === "live");
+const idx = caseStudies.findIndex((p) => p.slug === currentSlug);
+const next = caseStudies[(idx + 1) % caseStudies.length];
+---
+
+<section class="border-t border-[var(--color-line)] mt-20">
+  <a
+    href={next.href}
+    class="block mx-auto max-w-6xl px-6 py-16 group"
+  >
+    <div class="text-xs uppercase tracking-[0.18em] text-[var(--color-muted)] mb-3">
+      Next project
+    </div>
+    <div class="flex items-baseline justify-between gap-6">
+      <h3 class="text-3xl md:text-5xl leading-tight group-hover:text-[var(--color-accent)] transition-colors">
+        {next.title}
+      </h3>
+      <div class="text-xl md:text-2xl text-[var(--color-muted)] group-hover:text-[var(--color-accent)] transition-colors">→</div>
+    </div>
+  </a>
+</section>

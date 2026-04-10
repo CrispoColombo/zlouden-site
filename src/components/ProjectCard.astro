@@ -1,0 +1,54 @@
+---
+import type { Project } from "../data/projects";
+
+type Props = { project: Project; index: number };
+const { project, index } = Astro.props;
+
+const linkable = Boolean(project.href);
+const Tag = linkable ? "a" : "div";
+const tagProps = linkable ? { href: project.href } : {};
+---
+
+<Tag
+  {...tagProps}
+  class:list={[
+    "group block border-b border-[var(--color-line)] py-10 md:py-14",
+    linkable ? "cursor-pointer" : "cursor-default",
+  ]}
+>
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+    <div class="md:col-span-4 md:sticky md:top-24">
+      <div class="text-xs uppercase tracking-[0.18em] text-[var(--color-muted)] mb-3">
+        {String(index + 1).padStart(2, "0")} · {project.role}{project.year ? ` · ${project.year}` : ""}
+      </div>
+      <h2 class="text-3xl md:text-4xl leading-tight mb-4">
+        {project.title}
+      </h2>
+      <p class="text-[var(--color-muted)] text-base md:text-lg leading-relaxed max-w-prose">
+        {project.tagline}
+      </p>
+      {
+        project.status === "coming-soon" && (
+          <div class="mt-4 inline-block text-xs uppercase tracking-[0.18em] text-[var(--color-muted)] border border-[var(--color-line)] px-3 py-1">
+            Case study coming soon
+          </div>
+        )
+      }
+      {
+        linkable && (
+          <div class="mt-5 text-sm text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity">
+            View case study →
+          </div>
+        )
+      }
+    </div>
+    <div class="md:col-span-8 overflow-hidden bg-white border border-[var(--color-line)]">
+      <img
+        src={project.thumb}
+        alt={project.title}
+        class="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+        loading={index < 2 ? "eager" : "lazy"}
+      />
+    </div>
+  </div>
+</Tag>

@@ -1,0 +1,107 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+---
+
+<CaseStudyLayout
+  title="Nuna"
+  tagline="An Operations Dashboard for processing Medicaid data from ~70 million lives across 50 states and 7 territories."
+  role="UX Design Lead"
+  year="2016–2018"
+  slug="nuna"
+>
+  <figure>
+    <img src="/images/nuna/hero.gif" alt="Nuna Operations Dashboard" />
+  </figure>
+
+  <h2>Overview</h2>
+  <p>
+    Nuna's Government Services Division worked directly with the Centers for
+    Medicare and Medicaid Services (CMS). I led design on the Operations
+    Dashboard — a system used to ingest, error-check, and manage Medicaid
+    data covering approximately 70 million lives, submitted by all 50 states
+    and 7 U.S. territories.
+  </p>
+
+  <h2>The Mandate</h2>
+  <p>
+    In 2013, CMS mandated that all states and territories begin submitting
+    Medicaid data in the new standardized T-MSIS format. This modernized how
+    states submitted beneficiary, provider, claims, and encounter data — but
+    also placed enormous pressure on the infrastructure that received it.
+  </p>
+
+  <h2>Challenge</h2>
+  <p>
+    The existing ingestion system was slow and opaque. Processing a 92GB file
+    could take up to a week. States had no visibility into their submission
+    status, no acknowledgment of receipt, and no way to know whether their
+    data had passed validation. Our team needed to rebuild the pipeline to
+    be fast and reliable, and build a dashboard on top of it that both Nuna
+    operators and state users could trust.
+  </p>
+
+  <figure>
+    <img src="/images/nuna/diagram.png" alt="Operations Dashboard architecture" />
+  </figure>
+
+  <h2>Understanding the Ecosystem</h2>
+  <p>
+    I started with discovery across the entire pipeline — talking with
+    subject matter experts about what a T-MSIS file actually contains, how it
+    flows through the data warehouse, and where things usually broke down.
+    Because we had limited direct access to state users, we built personas
+    from stakeholder interviews to ground our design decisions.
+  </p>
+
+  <figure>
+    <img src="/images/nuna/research1.jpg" alt="Research session" />
+  </figure>
+  <figure>
+    <img src="/images/nuna/research2.jpg" alt="Research session" />
+  </figure>
+  <figure>
+    <img src="/images/nuna/personas.jpg" alt="User personas" />
+  </figure>
+
+  <h2>Wireframing</h2>
+  <p>
+    I built rough Sketch wireframes to organize the layout and user flows for
+    what was becoming a very complex application — ingestion status, quality
+    reports, issue investigation, and state-by-state comparison all needed to
+    coexist without overwhelming users.
+  </p>
+
+  <figure>
+    <img src="/images/nuna/wire1.png" alt="Wireframes — dashboard" />
+  </figure>
+  <figure>
+    <img src="/images/nuna/wire2.png" alt="Wireframes — file detail" />
+  </figure>
+  <figure>
+    <img src="/images/nuna/wire3.png" alt="Wireframes — quality reports" />
+  </figure>
+
+  <h2>Refinement</h2>
+  <p>
+    The final design uses a scalable, multi-level navigation that leaves room
+    for future feature expansion. Operators can drill from a fleet-wide view
+    of all 57 jurisdictions down into a single file's quality report in a
+    handful of clicks.
+  </p>
+
+  <figure>
+    <img src="/images/nuna/master.png" alt="Master controller" />
+  </figure>
+
+  <h2>Outcome</h2>
+  <p>
+    I presented an Axure prototype at CMS headquarters in Baltimore. The
+    reception was exceptional — enough to make it into production planning
+    almost immediately. Today, 42 states use the Operations Dashboard in
+    full production.
+  </p>
+
+  <figure>
+    <img src="/images/nuna/final.gif" alt="Nuna Operations Dashboard in use" />
+  </figure>
+</CaseStudyLayout>

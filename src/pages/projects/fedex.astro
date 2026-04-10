@@ -1,0 +1,87 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+---
+
+<CaseStudyLayout
+  title="FedEx TRAC & Route"
+  tagline="A modern replacement for the 30-year-old aircraft and route planning system managing 660 aircraft across 375+ locations."
+  role="Product Designer"
+  year="2014–2015"
+  slug="fedex"
+>
+  <figure>
+    <img src="/images/fedex/hero.png" alt="FedEx TRAC application" />
+  </figure>
+
+  <h2>Overview</h2>
+  <p>
+    FedEx Express operated on a 30+ year old planning system used to schedule
+    and track the movement of 660 aircraft to 375+ locations around the globe.
+    The system was built from a web of disconnected tools, relied on knowledge
+    that lived only in the heads of senior planners, and took new hires roughly
+    two years to learn before they could work independently.
+  </p>
+
+  <p class="pullquote">
+    New planners took two years to become productive. The software wasn't
+    teaching them — the senior planners were.
+  </p>
+
+  <h2>Challenges</h2>
+  <ul>
+    <li>Multiple disconnected systems that required constant context switching</li>
+    <li>A 2-year onboarding process for new planners</li>
+    <li>No real collaboration tools — hand-offs happened via phone and email</li>
+    <li>Weak data visualization in a fundamentally visual problem space</li>
+    <li>Workflows fragmented across tools, windows, and mental models</li>
+  </ul>
+
+  <h2>Research</h2>
+  <p>
+    I spent weeks embedded with veteran planners in Memphis, many with 20–40
+    years of tenure. What I found was that there wasn't one process — there were
+    two: <strong>TRAC</strong>, for international flight planning, and
+    <strong>ROUTE</strong>, for domestic. They had different cadences, different
+    constraints, and different mental models. Trying to force them into one UI
+    had been part of why the old system felt so broken.
+  </p>
+
+  <figure>
+    <img src="/images/fedex/u458.png" alt="Research and flow mapping" />
+  </figure>
+  <figure>
+    <img src="/images/fedex/u452.png" alt="Workflow analysis" />
+  </figure>
+
+  <h2>TRAC — International</h2>
+  <p>
+    TRAC is dominated by airport time slots: which aircraft can land where, and
+    when. I designed a vertical timeline layout that lets international planners
+    see slot availability across airports and coordinate schedules that had to
+    thread through dozens of constraints at once.
+  </p>
+
+  <figure>
+    <img src="/images/fedex/trac.gif" alt="TRAC application in use" />
+  </figure>
+
+  <h2>ROUTE — Domestic</h2>
+  <p>
+    Domestic planning is a different game: time, package volume, and truck
+    capacity are the main variables. The ROUTE layout is horizontal and
+    time-scale oriented, optimized for rapid decision making under tight windows.
+  </p>
+
+  <figure>
+    <img src="/images/fedex/route.gif" alt="ROUTE application in use" />
+  </figure>
+
+  <h2>Outcome</h2>
+  <p>
+    There was healthy skepticism from leadership at the start — people had lived
+    with the old tools for decades. The turning point was when a 37-year veteran
+    planner became the project's strongest advocate. I presented Axure prototypes
+    to leadership at FedEx HQ in Memphis; the redesign was approved and
+    significantly reduced the onboarding curve for new planners.
+  </p>
+</CaseStudyLayout>
